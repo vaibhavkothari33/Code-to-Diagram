@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "VS Code extension that converts code into diagrams.",
   "main": "./src/extension.js",
+  "publisher": "VaibhavKothari",
   "scripts": {
     "compile": "npx tsc",
     "test": "echo \"No tests yet\"",
@@ -15,9 +16,9 @@
     "onCommand:extension.generateDiagram"
   ],
   "repository": {
-  "type": "git",
-  "url": "https://github.com/vaibhavkothari33/Code-to-Diagram.git"
-},
+    "type": "git",
+    "url": "https://github.com/vaibhavkothari33/Code-to-Diagram.git"
+  },
   "categories": [
     "Other",
     "Visualization"
