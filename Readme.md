@@ -12,7 +12,7 @@ The **Code-to-Diagram Generator** is a Visual Studio Code extension that parses 
 ## Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-repo/code-to-diagram.git
+   git clone https://github.com/vaibhavkothari33/Code-to-Diagram.git
    ```
 2. Navigate into the project folder:
    ```sh
