@@ -193,3 +193,6 @@ export {
     AuthService,
     initializeApp
 }; 
+
+// ![Code to Diagram Demo](./public/diagram1.png)
+// ![Code Structure Example](./public/diagram2.png)
