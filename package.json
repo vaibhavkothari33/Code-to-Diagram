@@ -1,9 +1,9 @@
 {
   "name": "codesketch",
   "displayName": "CodeSketch",
-  "description": "Convert code to visual diagrams",
+  "description": "A powerful Visual Studio Code extension that generates interactive diagrams from your JavaScript, Python, and C++ code using D3.js visualization.",
   "publisher": "VaibhavKothari",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "engines": {
     "vscode": "^1.60.0"
   },
@@ -16,20 +16,20 @@
   },
   "icon": "logo.png",
   "activationEvents": [
-    "onCommand:extension.generateDiagram"
+    "onCommand:extension.codesketch"
   ],
   "main": "./src/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "extension.generateDiagram",
+        "command": "extension.codesketch",
         "title": "CodeSketch"
       }
     ],
     "menus": {
       "editor/context": [
         {
-          "command": "extension.generateDiagram",
+          "command": "extension.codesketch",
           "group": "navigation"
         }
       ]

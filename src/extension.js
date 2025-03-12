@@ -6,7 +6,7 @@ const fs = require('fs');
 function activate(context) {
     console.log('Code-to-Diagram extension is now active!');
 
-    let disposable = vscode.commands.registerCommand('extension.generateDiagram', async function () {
+    let disposable = vscode.commands.registerCommand('extension.codesketch', async function () {
         const editor = vscode.window.activeTextEditor;
         if (!editor) {
             vscode.window.showErrorMessage('No active editor!');

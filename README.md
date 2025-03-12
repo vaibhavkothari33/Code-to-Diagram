@@ -5,6 +5,7 @@ A powerful Visual Studio Code extension that generates interactive diagrams from
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![VS Code](https://img.shields.io/badge/VS%20Code-1.80+-blue.svg)
 
+[Download the Extension](https://marketplace.visualstudio.com/items?itemName=VaibhavKothari.codesketch)
 ## Features
 
 - 🎯 **Multi-language Support**: Analyzes JavaScript, TypeScript, Python, and C++ code
