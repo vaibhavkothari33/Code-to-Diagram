@@ -1,4 +1,4 @@
-# Code Structure Visualizer
+# Code to Diagram
 
 A powerful Visual Studio Code extension that generates interactive diagrams from your JavaScript, Python, and C++ code using D3.js visualization.
 
@@ -14,6 +14,9 @@ A powerful Visual Studio Code extension that generates interactive diagrams from
 - ⚡ **Real-time Updates**: Generates diagrams instantly as you code
 - 🎭 **Dark/Light Theme Support**: Seamless integration with VS Code themes
 - 💾 **Export Options**: Download diagrams as SVG or PNG files
+
+![Code to Diagram Demo](./public/diagram1.png)
+![Code Structure Example](./public/diagram2.png)
 
 ## Installation
 
