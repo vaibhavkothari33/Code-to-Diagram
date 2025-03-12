@@ -16,7 +16,7 @@ A powerful Visual Studio Code extension that generates interactive diagrams from
 - 💾 **Export Options**: Download diagrams as SVG or PNG files
 
 
-
+<!-- 
 ## Installation
 
 1. **Clone the Repository**
@@ -39,7 +39,7 @@ A powerful Visual Studio Code extension that generates interactive diagrams from
 4. **Install in VS Code**
    - Press `F5` to run in development mode, or
    - Generate VSIX file: `vsce package`
-   - Install the generated .vsix file in VS Code
+   - Install the generated .vsix file in VS Code -->
 
 ## Usage
 
@@ -109,7 +109,7 @@ This extension contributes the following settings:
 - Large files may take longer to process
 - Some complex template structures in C++ might not be fully represented
 - Certain JavaScript decorators may not be properly visualized
-
+<!-- 
 ## Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
@@ -127,7 +127,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
    ```bash
    git push origin feature/AmazingFeature
    ```
-5. Open a Pull Request
+5. Open a Pull Request -->
 
 ## Development
 

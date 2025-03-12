@@ -1,9 +1,9 @@
 {
-  "name": "code-to-diagram",
-  "displayName": "Code to Diagram",
+  "name": "codesketch",
+  "displayName": "CodeSketch",
   "description": "Convert code to visual diagrams",
-  "publisher":"VaibhavKothari",
-  "version": "0.1.0",
+  "publisher": "VaibhavKothari",
+  "version": "1.2.0",
   "engines": {
     "vscode": "^1.60.0"
   },
@@ -14,6 +14,7 @@
     "type": "git",
     "url": "https://github.com/vaibhavkothari33/Code-to-Diagram.git"
   },
+  "icon": "logo.png",
   "activationEvents": [
     "onCommand:extension.generateDiagram"
   ],
@@ -22,13 +23,29 @@
     "commands": [
       {
         "command": "extension.generateDiagram",
-        "title": "Generate Code Diagram"
+        "title": "CodeSketch"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "extension.generateDiagram",
+          "group": "navigation"
+        }
+      ]
+    }
   },
-  "dependencies": {},
+  "scripts": {
+    "compile": "npx tsc",
+    "package": "npx vsce package",
+    "publish": "npx vsce publish"
+  },
+  "dependencies": {
+    "mermaid": "^9.4.3"
+  },
   "devDependencies": {
     "@types/vscode": "^1.60.0",
-    "@types/node": "^14.0.0"
+    "@types/node": "^14.0.0",
+    "typescript": "^4.0.0"
   }
 }
