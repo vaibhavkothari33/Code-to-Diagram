@@ -20,10 +20,10 @@ def traverse(node, parent_id=None, nodes=None, edges=None, node_counter=None, de
     style = ""
     
     if isinstance(node, ast.FunctionDef):
-        label = f"Function: {node.name}"
+        label = f"Function\n{node.name}"
         style = "fill:#a2d8f2,stroke:#4a90b8"
     elif isinstance(node, ast.ClassDef):
-        label = f"Class: {node.name}"
+        label = f"Class\n{node.name}"
         style = "fill:#d9f7be,stroke:#52c41a"
     elif isinstance(node, ast.If):
         label = "If condition"
@@ -40,17 +40,20 @@ def traverse(node, parent_id=None, nodes=None, edges=None, node_counter=None, de
         else:
             module = node.module or ""
             names = ", ".join([f"{module}.{n.name}" for n in node.names])
-        label = f"Import: {names}"
+        label = f"Import\n{names}"
         style = "fill:#d9d9d9,stroke:#8c8c8c"
     elif isinstance(node, ast.Return):
-        label = "Return statement"
+        label = "Return"
         style = "fill:#ffa39e,stroke:#f5222d"
     elif isinstance(node, ast.Try):
         label = "Try block"
         style = "fill:#d3adf7,stroke:#722ed1"
     elif isinstance(node, ast.Except):
-        label = "Except handler"
+        label = "Except"
         style = "fill:#ffadd2,stroke:#eb2f96"
+    
+    # Escape special characters in label
+    label = label.replace('"', '\"').replace('\n', '\n')
     
     if style:
         nodes.append(f'{node_id}["{label}"]:::custom{node_counter[0]}')
@@ -65,8 +68,8 @@ def traverse(node, parent_id=None, nodes=None, edges=None, node_counter=None, de
     important_children = [
         child for child in ast.iter_child_nodes(node)
         if isinstance(child, (ast.FunctionDef, ast.ClassDef, ast.If, 
-                             ast.For, ast.While, ast.Import, ast.ImportFrom, 
-                             ast.Try, ast.Return))
+                            ast.For, ast.While, ast.Import, ast.ImportFrom, 
+                            ast.Try, ast.Return))
     ]
     
     # If there are no important children but there are other children,
@@ -89,8 +92,8 @@ def generate_flowchart_python(code):
         nodes, edges = traverse(tree)
         
         # Create Mermaid diagram with improved layout settings
-        diagram = "graph TD;\n"
-        diagram += "%%{ init: { 'flowchart': { 'curve': 'basis', 'nodeSpacing': 50, 'rankSpacing': 70 } } }%%\n"
+        diagram = "graph TD\n"  # Changed from "graph TD;" to "graph TD\n"
+        diagram += "%%{init: {'flowchart': {'curve': 'basis', 'nodeSpacing': 50, 'rankSpacing': 70}}}%%\n"
         diagram += "\n".join(nodes) + "\n" + "\n".join(edges)
         
         return diagram
@@ -105,8 +108,8 @@ def parse_javascript_typescript(code, language):
     
     # Create a root node
     root_id = f"node{node_counter}"
-    nodes.append(f'{root_id}["Root: {language} code"]:::rootNode')
-    nodes.append(f'classDef rootNode fill:#f5f5f5,stroke:#d9d9d9,stroke-width:2px')
+    nodes.append(f'{root_id}["{language} code"]:::rootNode')
+    nodes.append('classDef rootNode fill:#f5f5f5,stroke:#d9d9d9,stroke-width:2px')
     node_counter += 1
     
     # Find class definitions
@@ -117,48 +120,18 @@ def parse_javascript_typescript(code, language):
         
         node_id = f"node{node_counter}"
         if parent_class:
-            label = f"Class: {class_name}\nextends {parent_class}"
+            label = f"Class\n{class_name}\nextends {parent_class}"
         else:
-            label = f"Class: {class_name}"
+            label = f"Class\n{class_name}"
         
         nodes.append(f'{node_id}["{label}"]:::classNode')
         edges.append(f"{root_id} --> {node_id}")
         node_counter += 1
-        
-        # Find methods within this class
-        # Get the class body by finding the matching closing brace
-        class_start = match.end()
-        brace_count = 0
-        found_first_brace = False
-        class_end = class_start
-        
-        for i in range(class_start, len(code)):
-            if code[i] == '{':
-                if not found_first_brace:
-                    found_first_brace = True
-                brace_count += 1
-            elif code[i] == '}':
-                brace_count -= 1
-                if found_first_brace and brace_count == 0:
-                    class_end = i
-                    break
-        
-        class_body = code[class_start:class_end]
-        
-        # Find methods in the class body
-        method_pattern = r'(?:asyncs+)?(?:statics+)?(?:get|set)?s*(w+)s*([^)]*)s*{|(?:asyncs+)?(w+)s*=s*(?:([^)]*)|asyncs*([^)]*))s*=>'
-        for method_match in re.finditer(method_pattern, class_body):
-            method_name = method_match.group(1) or method_match.group(2)
-            if method_name and method_name not in ['constructor', 'if', 'for', 'while', 'switch']:
-                method_id = f"node{node_counter}"
-                nodes.append(f'{method_id}["Method: {method_name}"]:::methodNode')
-                edges.append(f"{node_id} --> {method_id}")
-                node_counter += 1
     
     # Find standalone functions
     function_patterns = [
         r'functions+(w+)s*([^)]*)',  # Normal function declaration
-        r'consts+(w+)s*=s*(?:asyncs*)?([^)]*)s*=>',  # Arrow function with parameters
+        r'consts+(w+)s*=s*(?:asyncs*)?([^)]*)s*=>',  # Arrow function
         r'consts+(w+)s*=s*(?:asyncs*)?s*functions*([^)]*)'  # Function expression
     ]
     
@@ -167,7 +140,7 @@ def parse_javascript_typescript(code, language):
             func_name = match.group(1)
             if func_name:
                 node_id = f"node{node_counter}"
-                nodes.append(f'{node_id}["Function: {func_name}"]:::functionNode')
+                nodes.append(f'{node_id}["Function\n{func_name}"]:::functionNode')
                 edges.append(f"{root_id} --> {node_id}")
                 node_counter += 1
     
@@ -177,8 +150,8 @@ def parse_javascript_typescript(code, language):
     nodes.append('classDef functionNode fill:#a2d8f2,stroke:#4a90b8,stroke-width:1.5px')
     
     # Create Mermaid diagram with improved layout settings
-    diagram = "graph TD;\n"
-    diagram += "%%{ init: { 'flowchart': { 'curve': 'basis', 'nodeSpacing': 50, 'rankSpacing': 60 } } }%%\n"
+    diagram = "graph TD\n"  # Changed from "graph TD;" to "graph TD\n"
+    diagram += "%%{init: {'flowchart': {'curve': 'basis', 'nodeSpacing': 50, 'rankSpacing': 60}}}%%\n"
     diagram += "\n".join(nodes) + "\n" + "\n".join(edges)
     
     return diagram
