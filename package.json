@@ -14,6 +14,10 @@
   "activationEvents": [
     "onCommand:extension.generateDiagram"
   ],
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/vaibhavkothari33/Code-to-Diagram.git"
+},
   "categories": [
     "Other",
     "Visualization"
