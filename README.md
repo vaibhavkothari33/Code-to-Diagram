@@ -14,7 +14,6 @@ A powerful Visual Studio Code extension that generates interactive diagrams from
 - 🔍 **Detailed Information**: Shows class relationships, methods, parameters, and documentation
 - ⚡ **Real-time Updates**: Generates diagrams instantly as you code
 - 🎭 **Dark/Light Theme Support**: Seamless integration with VS Code themes
-- 💾 **Export Options**: Download diagrams as SVG or PNG files
 
 
 <!-- 
@@ -46,17 +45,17 @@ A powerful Visual Studio Code extension that generates interactive diagrams from
 
 1. Open any supported file (JavaScript, TypeScript, Python, or C++)
 2. Open Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`)
-3. Type "Generate Code Diagram" and select the command
+3. Type "codesketch" and select the command
 4. View the interactive diagram in the side panel
 5. Use the download buttons in the top-right corner to save the diagram as SVG or PNG
 
-### Keyboard Shortcuts
+<!-- ### Keyboard Shortcuts
 - Generate Diagram: `Ctrl+Alt+D` (Windows/Linux) or `Cmd+Alt+D` (Mac)
 - Zoom: Mouse wheel or trackpad
 - Pan: Click and drag
-- Reset View: Double click
+- Reset View: Double click -->
 
-### Export Options
+<!-- ### Export Options
 - **SVG Export**: Vector format, perfect for:
   - High-quality printing
   - Further editing in vector graphics software
@@ -65,7 +64,7 @@ A powerful Visual Studio Code extension that generates interactive diagrams from
   - Web usage
   - Presentations
   - Quick sharing
-  - Documentation screenshots
+  - Documentation screenshots -->
 
 ## Features in Detail
 
