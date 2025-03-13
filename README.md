@@ -47,7 +47,7 @@ A powerful Visual Studio Code extension that generates interactive diagrams from
 2. Open Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`)
 3. Type "codesketch" and select the command
 4. View the interactive diagram in the side panel
-5. Use the download buttons in the top-right corner to save the diagram as SVG or PNG
+<!-- 5. Use the download buttons in the top-right corner to save the diagram as SVG or PNG -->
 
 <!-- ### Keyboard Shortcuts
 - Generate Diagram: `Ctrl+Alt+D` (Windows/Linux) or `Cmd+Alt+D` (Mac)
@@ -129,9 +129,9 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
    ```
 5. Open a Pull Request -->
 
-## Development
+<!-- ## Development -->
 
-### Project Structure
+<!-- ### Project Structure
 ```
 code-structure-visualizer/
 ├── src/
@@ -142,9 +142,9 @@ code-structure-visualizer/
 ├── test/                   # Test files
 ├── examples/              # Example code files
 └── docs/                 # Documentation
-```
+``` -->
 
-### Building
+<!-- ### Building
 ```bash
 npm run build
 ```
@@ -152,7 +152,7 @@ npm run build
 ### Testing
 ```bash
 npm test
-```
+``` -->
 
 ## License
 
@@ -166,4 +166,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Made with ❤️ by Vaibhav Kothari 
+Made with ❤️ by Vaibhav Kothari
+
+Follow me on [GitHub](https://github.com/vaibhavkothari33), [Twitter](https://x.com/vaibhavkotharii), and [LinkedIn](https://www.linkedin.com/in/vaibhavkothari33/)
