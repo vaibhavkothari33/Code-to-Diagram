@@ -3,7 +3,7 @@
   "displayName": "CodeSketch",
   "description": "A powerful Visual Studio Code extension that generates interactive diagrams from your JavaScript, Python, and C++ code using D3.js visualization.",
   "publisher": "VaibhavKothari",
-  "version": "1.4.0",
+  "version": "1.5.1",
   "engines": {
     "vscode": "^1.60.0"
   },
@@ -41,11 +41,15 @@
     "publish": "npx vsce publish"
   },
   "dependencies": {
-    "mermaid": "^9.4.3"
+    "@babel/parser": "^7.29.7",
+    "@babel/traverse": "^7.29.7",
+    "acorn": "^8.17.0",
+    "acorn-walk": "^8.3.5",
+    "d3": "^7.9.0"
   },
   "devDependencies": {
-    "@types/vscode": "^1.60.0",
     "@types/node": "^14.0.0",
+    "@types/vscode": "^1.60.0",
     "typescript": "^4.0.0"
   }
 }

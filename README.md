@@ -2,19 +2,15 @@
 
 A powerful Visual Studio Code extension that generates interactive diagrams from your JavaScript, Python, and C++ code using D3.js visualization.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![VS Code](https://img.shields.io/badge/VS%20Code-1.80+-blue.svg)
-
 [Download the Extension](https://marketplace.visualstudio.com/items?itemName=VaibhavKothari.codesketch)
 ## Features
 
-- 🎯 **Multi-language Support**: Analyzes JavaScript, TypeScript, Python, and C++ code
-- 📊 **Interactive Diagrams**: Dynamic, zoomable D3.js visualizations
-- 🎨 **Smart Styling**: Automatic color themes based on VS Code's current theme
-- 🔍 **Detailed Information**: Shows class relationships, methods, parameters, and documentation
-- ⚡ **Real-time Updates**: Generates diagrams instantly as you code
-- 🎭 **Dark/Light Theme Support**: Seamless integration with VS Code themes
-
+- **Multi-language Support**: Analyzes JavaScript, TypeScript, Python, and C++ code
+- **Interactive Diagrams**: Dynamic, zoomable D3.js visualizations
+- **Smart Styling**: Automatic color themes based on VS Code's current theme
+- **Detailed Information**: Shows class relationships, methods, parameters, and documentation
+- **Real-time Updates**: Generates diagrams instantly as you code
+- **Dark/Light Theme Support**: Seamless integration with VS Code themes
 
 <!-- 
 ## Installation
@@ -166,6 +162,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Made with ❤️ by Vaibhav Kothari
-
+Made with love by Vaibhav Kothari
 Follow me on [GitHub](https://github.com/vaibhavkothari33), [Twitter](https://x.com/vaibhavkotharii), and [LinkedIn](https://www.linkedin.com/in/vaibhavkothari33/)
